@@ -1,0 +1,51 @@
+.header>div {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    display: grid;
+    font-family: fantasy, sans-serif;
+    font-size: 2vmax;
+    padding: 0 1rem;
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+}
+
+.header>div:hover,
+.sandwich>div:hover {
+    background-color: rgb(78, 226, 177);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.header>div:active,
+.sandwich>div:active {
+    background-color: rgb(250, 9, 9);
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media (max-width: 702px) {
+    .header {
+        display: none;
+    }
+    .logo::after {
+        content: "\2630";
+        font-size: 33px;
+        margin-left: 38%;
+    }
+}
+
+@media (min-width: 703px) {
+    .header {
+        display: flex;
+    }
+    .sandwich {
+        display: none !important;
+    }
+}

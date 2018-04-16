@@ -1,0 +1,220 @@
+
+body {
+    background: linear-gradient(45deg, rgb(27, 233, 9), rgb(35, 253, 253));
+    cursor: url(../cursor.cur), progress !important;
+}
+a {
+    text-decoration: none;
+}
+.wrap {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2%;
+}
+
+.logo {
+    grid-area: logo;
+    background-color: aqua;
+}
+
+.logo img {
+    height: inherit;
+    -webkit-max-logical-width: -webkit-fill-available;
+}
+
+.header {
+    grid-area: header;
+    background-color: aqua;
+}
+
+.sandwich {
+    grid-area: sandwich;  
+    display: none;
+}
+.photo-slider {
+    grid-area: slider;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    margin-top: 39%;
+}
+
+.main {
+    grid-area: main;
+    padding: 13% 0% 0 4%;
+}
+
+.footer {
+    grid-area: footer;  
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: "logo header header" 
+                        "sandwich slider ."
+                        "sidebar main main" 
+                        "footer footer footer";
+}
+
+.header>div {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    display: grid;
+    font-family: fantasy, sans-serif;
+    font-size: 2vmax;
+    padding: 0 1rem;
+}
+.header a {
+    text-decoration: none;
+    color: black;
+}
+
+.header>div:hover,
+.sandwich>div:hover {
+    background-color: rgb(78, 226, 177);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.header>div:active, 
+.sandwich>div:active {
+    background-color: rgb(250, 9, 9);
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@media (max-width: 702px) {
+    .header  {
+        display: none;
+    }
+    .logo::after {
+        content: "\2630";
+        font-size: 33px;
+        margin-left: 38%;
+    }
+}
+
+@media (min-width: 703px) {
+    .header  {
+        display: flex;
+    }
+    .sandwich {
+        display: none !important;
+    }
+}
+    
+.sandwich {
+    flex-direction: column;
+    font-family: fantasy, sans-serif;
+    align-items: center;
+    text-align: -webkit-center;
+}
+.sandwich > div {
+    background-color: aqua;
+}
+#resultBack {
+    z-index: 99;
+    background-color:rgba(0,0,0,.6);
+    height:100%;
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    display: none;
+}
+
+#result {
+    position: absolute;
+    z-index: 100;
+    background-color: #f0f791;
+    border-radius: 2rem;
+    margin-left: 22%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 7%;
+}
+.social {
+    display: inline-flex;
+}
+.social .vk,
+.social .facebook,
+.social .twitter {
+    width: 62px;
+    height: 63px;
+    display: inline-flex;
+    margin-top: 12px;
+    margin-left: 12px;
+    background: url(../img/css_sprites.png) no-repeat;
+    box-shadow: inset rgba(0, 0, 0, .6) 0 -3px 8px, 
+                inset rgba(252, 255, 255, .7) 0 3px 8px, 
+                rgba(0, 0, 0, .8) 0 3px 8px -3px;
+}
+.social > div:active {
+    box-shadow: none;
+}
+
+.social .vk {
+    background-position: -11px;
+}
+
+.social .facebook {
+    background-position: -95px;
+}
+
+.social .twitter {
+    background-position: -179px;
+}
+.footer a {
+    text-decoration: none;
+    display: inline-flex;
+    float: right;
+    padding-top: 1.5em;
+    padding-right: 2em;
+    font-family: fantasy, sans-serif;
+    font-size: 1.5em;
+    color: #1b3c96;
+    text-shadow: -10px 14px 4px black;
+
+}
+.footer .subscribe {
+    display: inline-flex;
+    font-family: fantasy, sans-serif;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 50%;
+    height: 4em;
+    align-items: center;
+    background-color: #467dcf;
+    animation: shadow 3s linear infinite; 
+    transition: .5s;
+}
+
+.footer .subscribe:hover {
+        transform: matrix(5, 0, 0, 5, 0, -250);
+        background-color: #85a3d1;
+        animation: none;  
+}
+#subscribe {
+    display: none;
+    padding: 0 10px;
+}
+.footer .subscribe:active {
+    color: #c6db0b;
+    
+}
+@keyframes shadow {
+    from {box-shadow: inset 0px -15px 20px 4px black;}
+    40% {box-shadow: inset 10px 11px 20px 4px black;}
+    80% {box-shadow: inset -13px 9px 20px 4px black;}
+    to {box-shadow: inset 0px -15px 20px 4px black;}
+}

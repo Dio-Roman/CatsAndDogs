@@ -1,0 +1,105 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 5%;
+}
+
+.social {
+    display: inline-flex;
+}
+
+.social .vk,
+.social .facebook,
+.social .twitter {
+    width: 62px;
+    height: 63px;
+    display: inline-flex;
+    margin-top: 12px;
+    margin-left: 12px;
+    background: url(../img/css_sprites.png) no-repeat;
+    box-shadow: inset rgba(0, 0, 0, .6) 0 -3px 8px, inset rgba(252, 255, 255, .7) 0 3px 8px, rgba(0, 0, 0, .8) 0 3px 8px -3px;
+}
+
+.social>div:active {
+    box-shadow: none;
+}
+
+.social .vk {
+    background-position: -11px;
+}
+
+.social .facebook {
+    background-position: -95px;
+}
+
+.social .twitter {
+    background-position: -179px;
+}
+
+.footer a {
+    text-decoration: none;
+    display: inline-flex;
+    float: right;
+    padding-top: 1.5em;
+    padding-right: 2em;
+    font-family: fantasy, sans-serif;
+    font-size: 1.5em;
+    color: #1b3c96;
+    text-shadow: -10px 14px 4px black;
+}
+
+.footer .subscribe {
+    display: inline-flex;
+    font-family: fantasy, sans-serif;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 50%;
+    height: 4em;
+    align-items: center;
+    background-color: #467dcf;
+    animation: shadow 3s linear infinite;
+    transition: .5s;
+}
+
+.footer .subscribe:hover {
+    transform: matrix(5, 0, 0, 5, 0, -250);
+    background-color: #85a3d1;
+    animation: none;
+}
+
+#subscribe {
+    display: none;
+    padding: 0 10px;
+}
+
+.footer .subscribe:active {
+    color: #c6db0b;
+}
+
+@keyframes shadow {
+    from {
+        box-shadow: inset 0px -15px 20px 4px black;
+    }
+    40% {
+        box-shadow: inset 10px 11px 20px 4px black;
+    }
+    80% {
+        box-shadow: inset -13px 9px 20px 4px black;
+    }
+    to {
+        box-shadow: inset 0px -15px 20px 4px black;
+    }
+}
+
+.tel {
+    margin-right: 5em;
+}
+
+.tel li {
+    list-style: circle;
+}
+
+.main h1 {
+    text-align: center;
+}
